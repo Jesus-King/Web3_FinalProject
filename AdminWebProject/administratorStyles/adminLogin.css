@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.row {
+  display: flex;
+  
+}
+
+.left_column {
+  flex: 50%;
+  height: 100vh;
+}
+
+.right_column {
+  flex: 60%;
+  background-color: rgb(248, 247, 240);
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  height: 100vh;
+}
+
+.right_column:hover {
+  box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+}
+
+.containerLog {
+  display: block;
+  text-align: center;
+  margin: 20%;
+}
+
+#logo {
+  height: 70%;
+  width: 100%;
+}
+
+#loginBG {
+  height: 70%;
+  width: 70%;
+  margin-top: 15%;
+  margin-left: 10%;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 3px 0;
+  display: inline-block;
+  border: 3px solid black;;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+  
+}
+
+input[type=submit] {
+  width: 30%;
+  background-color: rgb(235, 205, 38);
+  color: white;
+  padding: 14px 20px;
+  margin-top: 8px;
+  margin-left: 70%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.logWord {
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.copyright {
+  margin: 50px 0;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+

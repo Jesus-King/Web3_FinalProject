@@ -1,0 +1,65 @@
+
+.job-container textarea, 
+input:not([type=radio], [type=file], [type=reset], [type=submit]){
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    
+}
+
+input[type="checkbox"] {
+    width: fit-content;
+}
+
+.job-container, .input_fields_wrap, .input_fields_wrap2, .input_fields_wrap3, .input_fields_wrap4 {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px 100px 0px 100px;
+    
+}
+
+textarea {
+    resize: none;
+  }
+
+a {
+    text-decoration: none;
+}
+
+table {
+    width: 100%;
+}
+
+.add_field_button, .add_field_button2, .add_field_button3, .add_field_button4{
+    background-color: #e3b23c;
+    padding: 1% 3%;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    margin-top: 10px;
+    float: right;
+}
+
+.add_field_button:hover, .add_field_button2:hover, .add_field_button3:hover, .add_field_button4:hover {
+    background-color: #00FFCB;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.button-tray {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+
+.dropdownSelection {
+    border: 10px;
+    border-color: #e3b23c;
+}
+
+

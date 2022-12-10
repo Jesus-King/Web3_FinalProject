@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Admin - Job Seeker</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+              rel="stylesheet">
+        <link rel="stylesheet" href="administratorStyles/adminStyle.css"/>
+        <link rel="stylesheet" href="administratorStyles/adminEditInformationDialog.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+        <script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src ="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <link rel="stylesheet" href="administratorStyles/modalStyle.css">
+        
+
+        <style>
+            .job-container, .input_fields_wrap, .input_fields_wrap2, .input_fields_wrap3, .input_fields_wrap4 {
+                padding: 0 !important;
+            }
+        </style>
+        <script>
+        $(document).ready(function () {  
+            $('#jobtable').DataTable({
+                "lengthMenu": [5,10],
+                "pageLength": 10,
+                "scrollX": true
+            });
+        });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <div class="logo">
+                    <img src="images/Logo.png" alt="logo">
+                </div>
+                
+                
+                <div class="sidebar">
+                    <hr class="solid">
+
+                    <a href="admindashboard.html">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <p>DASHBOARD</p>
+                    </a>
+                    <a href="adminjobSeeker.html">
+                        <span class="material-icons-sharp">person_search</span>
+                        <p>JOB SEEKER</p>
+                    </a>
+                    <a href="adminjobProvider.html">
+                        <span class="material-icons-sharp">add_business</span>
+                        <p>JOB PROVIDER</p>
+                    </a>
+                    <a href="adminjob.html">
+                        <span class="material-icons-sharp">cases</span>
+                        <p>JOBS</p>
+                    </a>
+                    <a href="adminLogin.html">
+                        <span class="material-icons-sharp">logout</span>
+                        <p>LOGOUT</p>
+                    </a>
+                    <hr class="solid">
+                </div>
+            </aside>
+            <!-- END OF ASIDE HERE... -->
+            <main style="width: 80vw;">
+                        <h1></h1>    
+                        <div class="recents">
+                        <div class="caption">
+                            <h2>Job Seeker</h2>
+                            <button id="printReport">Print Report</button>
+                        </div>
+                        <table id="jobtable" class="table hover stripe" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>E-mail</th>
+                                <th>Contact Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                                
+                                <tr>
+                               <td>1</td>
+                                <td>Mary Stuart</td>
+                                <td>marystuart</td>
+                                <td>marystuart@gmail.com</td>
+                                <td>09557129416</td>
+                                <td>    
+                                    <select class='actions'>
+                                        <option>----------</option>
+                                        <option>Update Profile</option>
+                                        <option>Delete Profile</option>
+                                    </select>
+                                </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                     <td>Juniper Luna</td>
+                                     <td>luna_juniper</td>
+                                     <td>juniper.luna77@gmail.com</td>
+                                     <td>09693301554</td>
+                                     <td>    
+                                         <select class='actions'>
+                                             <option>----------</option>
+                                             <option>Update Profile</option>
+                                             <option>Delete Profile</option>
+                                         </select>
+                                     </td>
+                                     </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Randy Middleton</td>
+                                    <td>rmiddleton</td>
+                                    <td>middleton_randy@yahoo.com</td>
+                                    <td>09590014471</td>
+                                    <td>    
+                                        <select class='actions'>
+                                            <option>----------</option>
+                                            <option>Update Profile</option>
+                                            <option>Delete Profile</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        
+        
+        <div id="viewModal" class="modal">
+            <div class="modalOptions">
+                <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+            </div>
+        </div>
+
+        
+        <form action="#" method="POST" style="max-width: 60vw;" class="new_form">
+            <p class="messageNotice" style="text-align: center; font-size: 2em; margin-bottom: 1em;">Update Profile</p>
+            <div class="job-container"> 
+                <br>
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>First Name</label><br>
+                            <input type="text" placeholder="First Name" name="fname" value="">
+                        </td>
+                        <td>
+                            <label>Middle Name</label><br>
+                            <input type="text" placeholder="Middle Name (Optional)" name="mname" value="">
+                        </td>
+                        <td>
+                            <label>Last Name</label><br>
+                            <input type="text" placeholder="Last Name" name="lname" value="">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <div class="job-container"> 
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Email</label><br>
+                            <input type="email" placeholder="Email" name="email" value="">
+                        </td>
+                        <td>
+                            <label>Username</label><br>
+                            <input type="text" placeholder="Username" name="uname" value="">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <div class="job-container"> 
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Contact Number</label><br>
+                            <input type="number" placeholder="Contact Number" name="contact" value="">
+                        </td>
+                        <td>
+                            <label>Address</label><br>
+                            <input type="text" placeholder="Address" name="address" value="">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+
+            <div class="job-container">
+                <label>About Me</label><br>
+                <textarea rows="4" cols="50" id="jobDescription" name="about"> </textarea>
+            </div>
+
+            <div class="input_fields_wrap">
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Education</label>
+                        </td>
+
+                        <td>
+                            <button class="add_field_button">Add Field</button>
+                        </td>
+                    </tr>
+                </tbody></table>
+                    <div><input type="text" name="seekerEducation[]"></div>
+            </div>
+
+            <div class="input_fields_wrap2">
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Job Experience</label>
+                        </td>
+
+                        <td>
+                            <button class="add_field_button2">Add Field</button>
+                        </td>
+                    </tr>
+                </tbody></table>
+                    <div><input type="text" name="seekerExperience[]"></div>
+            </div>
+
+            <div class="input_fields_wrap3">
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Certification</label>
+                        </td>
+
+                        <td>
+                            <button class="add_field_button3">Add Field</button>
+                        </td>
+                    </tr>
+                </tbody></table>
+                    <div><input type="text" name="seekerCertification[]"></div>
+            </div>
+
+            <div class="input_fields_wrap4">
+                <table>
+                    <tbody><tr>
+                        <td>
+                            <label>Languages</label>
+                        </td>
+
+                        <td>
+                            <button class="add_field_button4">Add Field</button>
+                        </td>
+                    </tr>
+                </tbody></table>
+                    <div><input type="text" name="seekerLanguages[]"></div>
+            </div>
+        
+            <div class="button-tray">
+                <input type="hidden" name="adminTargetId" value="2">
+                <input type="submit" class="modalNew" value="Update" name="update_userjobSeeker" id="updateInfo">
+                <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+            </div>
+
+            <!-- Add Data -->
+            <script>
+                $(document).ready(function() {
+                    var max_fields = 5;
+                    var x = 1;
+                    var x2 = 1;
+                    var x3 = 1;
+                    var x4 = 1;
+                
+                    $(".add_field_button").click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x < max_fields){ //max input box allowed
+                    
+                                //text box increment
+                            $(".input_fields_wrap").append('<div><input type="text" name="seekerEducation[]"/>'); //add input box
+                            x++; 
+                        }
+                    });
+
+                    $(".add_field_button2").click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x2 < max_fields){ //max input box allowed
+                    
+                                //text box increment
+                            $(".input_fields_wrap2").append('<div><input type="text" name="seekerExperience[]"/>'); //add input box
+                            x2++; 
+                        }
+                    });
+
+                    $(".add_field_button3").click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x3 < max_fields){ //max input box allowed
+                    
+                                //text box increment
+                            $(".input_fields_wrap3").append('<div><input type="text" name="seekerCertification[]"/>'); //add input box
+                            x3++; 
+                        }
+                    });
+
+                    $(".add_field_button4").click(function(e){ //on add input button click
+                        e.preventDefault();
+                        if(x4 < max_fields){ //max input box allowed
+                    
+                                //text box increment
+                            $(".input_fields_wrap4").append('<div><input type="text" name="seekerLanguages[]"/>'); //add input box
+                            x4++; 
+                        }
+                    });
+                });
+            </script>
+        
+    </form>
+
+
+        <!-- Delete Dialog -->
+        <div id="fade" class="modal" style="max-width: 60vw;">
+            <div class="modalOptions2">
+                <p class="messageNotice">Are you sure you want to remove the entry?</p>
+            </div>
+            
+
+            <div class="modalOptions">
+                <a href="#" class="modalNew" rel="modal:close">Delete</a>
+                <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="administratorScripts/adminJobSeeker.js"></script>
+</html>

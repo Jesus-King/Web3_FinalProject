@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Admin - Jobs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+                rel="stylesheet">
+        <link rel="stylesheet" href="administratorStyles/adminStyle.css"/>
+        <link rel="stylesheet" href="administratorStyles/adminEditInformationDialog.css">
+        
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+        <script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src ="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <link rel="stylesheet" href="administratorStyles/modalStyle.css">
+        <link rel="stylesheet" href="administratorStyles/adminUpdateForms.css">
+        <link rel="stylesheet" href="administratorStyles/adminjob.css">
+        
+
+        <script>
+        $(document).ready(function () {  
+            $('#jobtable').DataTable({
+                "lengthMenu": [5,10],
+                "pageLength": 10,
+                "scrollX": true
+            });
+        });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <div class="logo">
+                    <img src="images/Logo.png" alt="logo">
+                </div>
+                
+                
+                <div class="sidebar">
+                    <hr class="solid">
+
+                    <a href="admindashboard.html">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <p>DASHBOARD</p>
+                    </a>
+                    <a href="adminjobSeeker.html">
+                        <span class="material-icons-sharp">person_search</span>
+                        <p>JOB SEEKER</p>
+                    </a>
+                    <a href="adminjobProvider.html">
+                        <span class="material-icons-sharp">add_business</span>
+                        <p>JOB PROVIDER</p>
+                    </a>
+                    <a href="adminjob.html">
+                        <span class="material-icons-sharp">cases</span>
+                        <p>JOBS</p>
+                    </a>
+                    <a href="adminLogin.html">
+                        <span class="material-icons-sharp">logout</span>
+                        <p>LOGOUT</p>
+                    </a>
+                    <hr class="solid">
+                </div>
+            </aside>
+            <!-- END OF ASIDE HERE... -->
+            <main style="width: 80vw;">
+                        <h1></h1>    
+                        <div class="recents">
+                        <div class="caption">
+                            <h2>Job List</h2>
+                            <button id="printReport">Print Report</button>
+                        </div>
+                        <table id="jobtable" class="table hover stripe" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Job Title</th>
+                                <th>Location</th>
+                                <th>Salary Range</th>
+                                <th>Job Applied</th>
+                                <th>Date Posted</th>
+                                <th>View Applicants</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                                
+                            <tr>
+                                <td>1</td>
+                                <td>Software Developer</td> 
+                                <td>BGC, Taguig City</td>
+                                <td>25,000 Php. - 35,000 Php.</td>   
+                                <td>8:00 AM - 5:00 PM</td>
+                                <td>2022-08-12</td>
+
+                                <td><button class='view_applicant'>View Applicants</button></td>
+                                <td>    
+                                    <select class='actions'>
+                                        <option selected>----------</option>
+                                        <option>Update Job</option>
+                                        <option>Delete Job</option>
+                                        <option>-------------</option>
+                                        <option>Activate Job</option>
+                                        <option>Deactivate Job</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>Accounting Staff</td> 
+                                <td>Bacoor City, Cavite</td>
+                                <td>10,000 Php. - 15,000 Php.</td>   
+                                <td>10:00 AM - 7:00 PM</td>
+                                <td>2022-07-12</td>
+
+                                <td><button class='view_applicant'>View Applicants</button></td>
+                                <td>    
+                                    <select class='actions'>
+                                        <option selected>----------</option>
+                                        <option>Update Job</option>
+                                        <option>Delete Job</option>
+                                        <option>-------------</option>
+                                        <option>Activate Job</option>
+                                        <option>Deactivate Job</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>Licensed Practical Nurse</td> 
+                                <td>Munoz, Quezon City</td>
+                                <td>32,000 Php. - 35,000 Php.</td>   
+                                <td>5:00 PM - 2:00 AM</td>
+                                <td>2022-07-12</td>
+
+                                <td><button class='view_applicant'>View Applicants</button></td>
+                                <td>    
+                                    <select class='actions'>
+                                        <option selected>----------</option>
+                                        <option>Update Job</option>
+                                        <option>Delete Job</option>
+                                        <option>-------------</option>
+                                        <option>Activate Job</option>
+                                        <option>Deactivate Job</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        
+        
+        <div id="fade" class="modal">
+            <div class="modalOptions2">
+                <p class="messageNotice">Are you sure you want to remove the entry?</p>
+            </div>
+            
+    
+            <div class="modalOptions">
+                <a href="#" class="modalNew" rel="modal:close">Delete</a>
+                <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+            </div>
+        </div>
+
+        <div id="modalJobApplicants" class="modal" style="width: 75vw;">
+            <p class="messageNotice">Job Applicants</p>
+            <br>
+            <div class="modalFormDisplay">
+                <table id="tableJobApplicantsList">
+                    <thead>
+                        <tr>
+                            <td>Applicant Name</td>
+                            <td>Date Applied</td>
+                            <td>E-mail</td>
+                            <td>View Resume</td>
+                        </tr>
+                    </thead>
+                    <tbody id="jobApplicantsList">
+                        <td>Darwin Reyes</td>
+                        <td>Software Developer</td> 
+                        <td>Bulacan</td>
+                        <td><a href="#">Download Resume</a></td>   
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <div id="modalUpdateJob" class="modal">
+            <p class="messageNotice" style="text-align: center; font-size: 2em; margin-bottom: 1em;">Update Profile</p>
+            <div class="modalFormDisplay">
+                <form action="#" method="POST">
+                    <div class="displayCurrentJobProvider">
+                        <br>
+                        
+                        <div>
+                            <label>Job Title</label>
+                            <input type="text" name="jobTitle" required="required">
+                        </div>
+                        <br>
+                        
+                            <label>Job Specialization: </label>
+                            <br>
+                                <select name="jobSpecialization" style="width: 100%; padding: 0.5em 0;" id="jobSpecialization">
+                                    <option selected="selected">--- Select one. ---</option>
+                                    <option value="Accounting/Finance">Accounting/Finance</option>
+                                    <option value="Admin/Human Resources">Admin/Human Resources</option>
+                                    <option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
+                                    <option value="Architecture and Construction">Architecture and Construction</option>
+                                    <option value="Arts, Audio/Video Technology, and Communication">Arts, Audio/Video Technology, and Communication</option>
+                                    <option value="Business and Finance">Business and Finance</option>
+                                    <option value="Education and Training">Education and Training</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Government and Public Administration">Government and Public Administration</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Hotel/Restaurant">Hotel/Restaurant</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Law, Public Safety, Corrections, and Security">Law, Public Safety, Corrections, and Security</option>
+                                    <option value="Manufacturing">Manufacturing</option>
+                                    <option value="Sales and Marketing">Sales and Marketing</option>
+                                    <option value="Science, Technology, Engineering, and Math">Science, Technology, Engineering, and Math</option>
+                                    <option value="Service Industry">Service Industry</option>
+                                    <option value="Others">Others</option>
+                                </select> 
+                            
+                        <br>
+                        <br>
+    
+                        <div>
+                            <label>Job Location</label>
+                            <input type="text" name="city" placeholder="City / Municipality" required="required">
+                            <input type="text" name="province" placeholder="Province" required="required">
+                            <input type="text" name="country" placeholder="Country" required="required">
+                        </div>
+                        <br>
+                        <div id="jobDesignationContract">
+                            <div class="dropdownSelection">
+                                <label>Job Designation</label><br>
+                                <select name="jobDesignation" style="width: 100%; padding: 0.5em 0;" id="jobDesignation">
+                                    <option value="One Location">One Location</option>
+                                    <option value="Multiple Location">Multiple Location</option>
+                                    <option selected="selected" value="Remote Work">Remote Work</option>
+                                </select>
+                            </div>
+                            <br>
+                            <div class="dropdownSelection">
+                                <label>Job Contract</label><br>
+                                <select name="jobContract" style="width: 100%; padding: 0.5em 0;" id="jobContract">
+                                    <option value="Part-time">Part-time</option>
+                                    <option selected="selected" value="Full-time">Full-time</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div>
+                            <label>Work Schedule</label>
+                            <div id="workingSchedule">
+                                <div>
+                                    <label>From: </label>
+                                    <input type="time" name="startSched" id="" required="required">
+                                </div>
+                                <div>
+                                    <label>To: </label>
+                                    <input type="time" name="endSched" id="" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div id="workDaysShifts">
+                            <div>
+                                <label>Work Days:</label>
+                                <select name="workSched" style="width: 100%; padding: 0.5em 0;" id="workSched">
+                                    <option selected="selected" value="Monday to Sunday">Monday to Sunday</option>
+                                    <option value="Monday to Saturday">Monday to Saturday</option>
+                                    <option value="Monday to Friday">Monday to Friday</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Work Shifts:</label>
+                                <select name="workShift" style="width: 100%; padding: 0.5em 0;" id="workShift">
+                                    <option value="Traditional Shift">Traditional Shift</option>
+                                    <option value="Swing Shift">Swing Shift</option>
+                                    <option value="Graveyard Shift">Graveyard Shift</option>
+                                    <option value="Split Shift">Split Shift</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br><br>
+                        <div id="jobPayRange">
+                            <label>Job Pay</label>
+                            <div>
+                                <div>
+                                    <label>Minimum</label><br>
+                                    <input type="number" onkeypress="return /[0-9]/i.test(event.key)" min="0" name="minimumSalary" id="" required="required">       
+                                </div>
+                                <div>
+                                    <label>Maximum</label><br>
+                                    <input type="number" onkeypress="return /[0-9]/i.test(event.key)" min="0" name="maximumSalary" id="" required="required">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <label>Job Description</label><br>
+                            <textarea rows="4" cols="50" name="jobDescription" required="required" id="jobDescription"></textarea>
+                        </div>
+                        <br>
+                        <div>
+                            <div>
+                                <label>Qualification</label><br>
+                                <select name="qualification" style="width: 100%; padding: 0.5em 0;" id="qualification" >
+                                    <option value="Open">Everyone</option>
+                                    <option value="Junior High School">Junior High School</option>
+                                    <option value="Senior High School">Senior High School</option>
+                                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                                    <option value="Master's Degree">Master's Degree</option>
+                                    <option value="Doctoral Degree">Doctoral Degree</option>
+                                </select> 
+                                <input type="text" name="degreeQualification" id="" placeholder="Degree / Course" required="required">
+                            </div>
+                            
+                            <br><br>
+                            <div id="titleJobExperience">
+                                <label>Job Experience</label>
+                                <button id="addJobExperience">Add Entry</button>
+                            </div>
+                            
+                
+                                <div id="insertJobExperience">     
+                                    <div class="addJobExperienceEntry">
+                                        <input type="number" value="5" required="required" name="yearExperience[]" min="0" max="12" onkeypress="return /[0-9]/i.test(event.key)">
+                                        <span style="font-size: 0.75em; margin:  0 10px; color: black;"> yrs. of </span>
+                                        <input type="text" name="jobExperience[]" value="" style="width: 100%; padding: 0.5em 0;">
+                                    </div>
+                                </div>
+
+                                <script>
+                                    var appendJobExperience = '<div class="addJobExperienceEntry"><input type="number" required="required" name="yearExperience[]" min="0" max="12" value="0" onkeypress="return /[0-9]/i.test(event.key)"><span style="font-size: 0.75em; margin:  0 10px; color: black;"> yrs. of </span><input type="text" required="required" name="jobExperience[]" value=""></div>';
+
+                                    var ctr = 1;
+
+                                    $(document).ready(function() {
+                                    $("#addJobExperience").click(function(e){ //on add input button click
+                                        e.preventDefault();
+                                            if(ctr < 5){ //max input box allowed
+                                                //text box increment
+                                                $("#insertJobExperience").append(appendJobExperience); //add input box
+                                                ctr++; 
+                                            }
+                                        });
+                                    });
+                                </script>
+                            
+
+                        </div>
+                        <br><br>
+                          
+                        <br><br>
+                        
+                        <br><br>
+                        
+    
+                        <div class="modalOptions">
+                            <input type="hidden" name="adminTargetId" value="" id="adminTargetId">
+                            <input type="submit" class="modalNew" value="Update" name="update_userjobProvider" id="updateInfo">
+                            <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        
+    </body>
+        <script src="administratorScripts/adminJobs.js"></script>
+    </html>

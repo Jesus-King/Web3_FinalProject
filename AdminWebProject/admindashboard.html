@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Admin Dashboard</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+              rel="stylesheet">
+        <link rel="stylesheet" href="administratorStyles/adminStyle.css"/>
+        
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+        <script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src ="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+            $('#activitytable').DataTable({
+                "lengthMenu": [5,10],
+                "pageLength": 10,
+                "scrollX": true
+            });
+        });
+        </script>
+
+
+
+
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <div class="logo">
+                    <img src="images/Logo.png" alt="logo">
+                </div>
+
+                <div class="sidebar">
+                    <hr class="solid">
+
+                    <a href="admindashboard.html">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <p>DASHBOARD</p>
+                    </a>
+                    <a href="adminjobSeeker.html">
+                        <span class="material-icons-sharp">person_search</span>
+                        <p>JOB SEEKER</p>
+                    </a>
+                    <a href="adminjobProvider.html">
+                        <span class="material-icons-sharp">add_business</span>
+                        <p>JOB PROVIDER</p>
+                    </a>
+                    <a href="adminjob.html">
+                        <span class="material-icons-sharp">cases</span>
+                        <p>JOBS</p>
+                    </a>
+                    <a href="adminLogin.html">
+                        <span class="material-icons-sharp">logout</span>
+                        <p>LOGOUT</p>
+                    </a>
+                    <hr class="solid">
+                </div>
+
+            </aside>
+            
+            <main style="width: 80vw;">
+                <h1>Dashboard</h1>
+
+                <div class="insights">
+                    <div class="sales">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="middle">
+                            <div class="left">
+                                <p class="analytics">Recent Activities</p>
+                                <p class="analytics"><b>
+                                27
+                                </b></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                     <div class="sales">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="middle">
+                            <div class="left">
+                                <p class="analytics">Total Jobs List</p>
+                                <p class="analytics"><b>     
+                                15
+                                </b></p>
+                            </div>
+                            
+                        </div>
+                    
+                    </div>
+                     <div class="sales">
+                        <span class="material-icons-sharp">analytics</span>
+                        <div class="middle">
+                            <div class="left">
+                                <p class="analytics">Total Users</p>
+                                <p class="analytics"><b>
+                                14
+                                </b></p>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="recents">
+                    <div class="caption">
+                        <h2>Activity Log</h2>
+                    </div>
+                    <table id="activitytable" class="table table-striped" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Activity ID</th>
+                                <th>User ID</th>
+                                <th>Account Type</th>
+                                <th>User</th>
+                                <th>Timestamp</th>
+                                <th>Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>Job Seeker</td>
+                            <td>Doe, Mark</td>   
+                            <td>2022-08-12; 06:06:48pm</td>
+                            <td>User logged in</td>
+                            <td>
+                            </td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>Job Seeker</td>
+                                <td>Williamson, Carly</td>   
+                                <td>2022-08-12; 06:01:14pm</td>
+                                <td>User logged in</td>
+                                <td>
+                                </td>
+                                </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>6</td>
+                                <td>Job Provider</td>
+                                <td>Marquez, Peter</td>   
+                                <td>2022-08-12; 05:46:18pm</td>
+                                <td>User logged out</td>
+                                <td>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                
+                    </table>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

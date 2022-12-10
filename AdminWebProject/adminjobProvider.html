@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Admin - Job Provider</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+                rel="stylesheet">
+        <link rel="stylesheet" href="administratorStyles/adminStyle.css"/>
+        <link rel="stylesheet" href="administratorStyles/adminEditInformationDialog.css">
+        
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css"/>
+        <script src ="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src ="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+        <link rel="stylesheet" href="administratorStyles/modalStyle.css">
+        <link rel="stylesheet" href="administratorStyles/adminUpdateForms.css">
+        
+
+        <script>
+        $(document).ready(function () {  
+            $('#jobtable').DataTable({
+                "lengthMenu": [5,10],
+                "pageLength": 10,
+                "scrollX": true
+            });
+        });
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <div class="logo">
+                    <img src="images/Logo.png" alt="logo">
+                </div>
+                
+                
+                <div class="sidebar">
+                    <hr class="solid">
+
+                    <a href="admindashboard.html">
+                        <span class="material-icons-sharp">grid_view</span>
+                        <p>DASHBOARD</p>
+                    </a>
+                    <a href="adminjobSeeker.html">
+                        <span class="material-icons-sharp">person_search</span>
+                        <p>JOB SEEKER</p>
+                    </a>
+                    <a href="adminjobProvider.html">
+                        <span class="material-icons-sharp">add_business</span>
+                        <p>JOB PROVIDER</p>
+                    </a>
+                    <a href="adminjob.html">
+                        <span class="material-icons-sharp">cases</span>
+                        <p>JOBS</p>
+                    </a>
+                    <a href="adminLogin.html">
+                        <span class="material-icons-sharp">logout</span>
+                        <p>LOGOUT</p>
+                    </a>
+                    <hr class="solid">
+                </div>
+            </aside>
+            <!-- END OF ASIDE HERE... -->
+            <main style="width: 80vw;">
+                        <h1></h1>    
+                        <div class="recents">
+                        <div class="caption">
+                            <h2>Job Provider</h2>
+                            <button id="printReport">Print Report</button>
+                        </div>
+                        <table id="jobtable" class="table hover stripe" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>E-mail</th>
+                                <th>Contact Number</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        
+                                
+                                <tr>
+                               <td>1</td>
+                                <td>Accenture</td>
+                                <td>Jacob Rush</td>
+                                <td>jacobrush@gmail.com</td>
+                                <td>09557129416</td>
+                                <td>    
+                                    <select class='actions'>
+                                        <option>----------</option>
+                                        <option>Update Company</option>
+                                        <option>Delete Company</option>
+                                    </select>
+                                </td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Tech Solutions</td>
+                                     <td>Ichigo Strawberry</td>
+                                     <td>strawberry.ichigo@techsol.ph</td>
+                                     <td>09379913153</td>
+                                     <td>    
+                                         <select class='actions'>
+                                             <option>----------</option>
+                                             <option>Update Company</option>
+                                             <option>Delete Company</option>
+                                         </select>
+                                     </td>
+                                     </tr>
+                                
+                                <tr>
+                                    <td>3</td>
+                                    <td>Oracle Corporation</td>
+                                    <td>Kimberly Clearwater</td>
+                                    <td>kimberly_clearwater@gmail.com</td>
+                                    <td>09682484118</td>
+                                    <td>    
+                                        <select class='actions'>
+                                            <option>----------</option>
+                                            <option>Update Company</option>
+                                            <option>Delete Company</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+        
+        
+        <div id="fade" class="modal">
+            <div class="modalOptions2">
+                <p class="messageNotice">Are you sure you want to remove the entry?</p>
+            </div>
+            
+    
+            <div class="modalOptions">
+                <a href="#" class="modalNew" rel="modal:close">Delete</a>
+                <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+            </div>
+        </div>
+    
+        <div id="modalUpdateJob" class="modal">
+            <p class="messageNotice" style="text-align: center; font-size: 2em; margin-bottom: 1em;">Update Profile</p>
+            <div class="modalFormDisplay">
+                <form action="#" method="POST">
+                    <div class="displayCurrentJobProvider">
+                        <br>
+                        
+                        <label>Company Name</label><br>
+                        <input type="text" name="companyName" id="" placeholder="Company Name" value="">
+                        
+                        <br><br>
+                        <div class="names">
+                        <table>
+                            <tbody>
+                                <tr>    
+                                    <td>
+                                        <div>
+                                        <label>First Name</label><br>
+                                        <input type="text" name="firstName" placeholder="First Name" value="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                        <label>Middle Name</label><br>
+                                        <input type="text" name="middleName" placeholder="Middle Name (Optional)" value="">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div>
+                                        <label>Last Name</label><br>
+                                        <input type="text" name="lastName" placeholder="Last Name" value="">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <br>
+    
+                        <label>Email</label><br>
+                        <input type="email" name="email" placeholder="Email" value="">
+    
+                        <label>Contact Number</label><br>
+                        <input type="number" name="contactNumber" placeholder="Contact Number" value=""> 
+    
+                        <label>Company Address</label><br> 
+                        <input type="text" name="companyAddress" placeholder="Company Address" value="">
+                        <br><br>
+                        <label>Industry Field</label><br>
+                        
+                        <select name="jobSpecialization" style="width: 100%; padding: 0.5em 0;" id="jobSpecialization">
+                            <option selected="selected">--- Select one. ---</option>
+                            <option value="Accounting/Finance">Accounting/Finance</option>
+                            <option value="Admin/Human Resources">Admin/Human Resources</option>
+                            <option value="Agriculture, Food, and Natural Resources">Agriculture, Food, and Natural Resources</option>
+                            <option value="Architecture and Construction">Architecture and Construction</option>
+                            <option value="Arts, Audio/Video Technology, and Communication">Arts, Audio/Video Technology, and Communication</option>
+                            <option value="Business and Finance">Business and Finance</option>
+                            <option value="Education and Training">Education and Training</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Government and Public Administration">Government and Public Administration</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Hotel/Restaurant">Hotel/Restaurant</option>
+                            <option value="Information Technology">Information Technology</option>
+                            <option value="Law, Public Safety, Corrections, and Security">Law, Public Safety, Corrections, and Security</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Sales and Marketing">Sales and Marketing</option>
+                            <option value="Science, Technology, Engineering, and Math">Science, Technology, Engineering, and Math</option>
+                            <option value="Service Industry">Service Industry</option>
+                            <option value="Others">Others</option>
+                        </select><br>
+                        <br>
+                        <label>Company Background</label><br>
+                        <textarea rows="5" style="width: 100%;" name="companyBackground" id="jobDescription"></textarea>
+                        <br><br>
+                        <label>About Us</label>
+                        <textarea rows="5" style="width: 100%;" name="companyAboutUs" id="aboutUs"></textarea>
+                        <br>
+                        <div class="button-tray">
+                        <br><br>
+                        
+    
+                        <div class="modalOptions">
+                            <input type="hidden" name="adminTargetId" value="" id="adminTargetId">
+                            <input type="submit" class="modalNew" value="Update" name="update_userjobProvider" id="updateInfo">
+                            <a href="#" class="modalCancel" rel="modal:close">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+        
+    </body>
+        
+        <script src="administratorScripts/adminJobProvider.js"></script>
+    </html>

@@ -1,0 +1,118 @@
+
+
+.modalOptions2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 1rem;
+}
+
+.modalOptions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin-top: 1rem;
+}
+
+.messageNotice {
+  margin-top: 1em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.modalOptions p {
+  font-size: 1.5em;
+}
+
+.modalOptions2 > img {
+  width: 20px;
+}
+
+.modalCancel {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #252525;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+.modalCancel:hover,
+.modalCancel:focus {
+  background-color: #292929;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+.modalCancel:hover {
+  transform: translateY(-1px);
+}
+.modalCancel:active {
+  background-color: #595959;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+
+.modalNew {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #e3b23c;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+.modalNew:hover,
+.modalNew:focus {
+  background-color: #00FFCB;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+.modalNew:hover {
+  transform: translateY(-1px);
+}
+.modalNew:active {
+  background-color: #00FFCB;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+#fade2 h1 {
+  text-align: center;
+}
